@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Task Tracker</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
-    <div class="container">
-      <h1>Task Tracker</h1>
-  
-      <input type="text" id="listInput" placeholder="Crear nueva lista">
-      <button onclick="addList()">Crear Lista</button>
-  
-      <div id="listContainer"></div>
-    </div>
-  
-    <div class="dark-mode-container">
-      <button id="darkModeButton" onclick="toggleDarkMode()"><i id="darkModeIcon" class="fas fa-moon"></i></button>
-    </div>
+  <div class="container">
+    <h1>Task Tracker</h1>
+
+    <input type="text" id="listInput" placeholder="Crear nueva lista" onkeydown="handleListInput(event)">
+    <button onclick="addList()">Crear Lista</button>
+
+    <div id="listContainer"></div>
+  </div>
+
+  <div class="dark-mode-container">
+    <button id="darkModeButton" onclick="toggleDarkMode()"><i id="darkModeIcon" class="fas fa-moon"></i></button>
+  </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>

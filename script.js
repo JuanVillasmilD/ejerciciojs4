@@ -114,11 +114,26 @@ function renderLists() {
       '<h2>' + listName +
       ' <button onclick="editListName(' + i + ')">Editar</button>' +
       ' <button onclick="deleteList(' + i + ')">Eliminar</button></h2>' +
-      '<input type="text" id="taskInput-' + i + '" placeholder="Agregar tarea">' +
+      '<input type="text" id="taskInput-' + i + '" placeholder="Agregar tarea" onkeydown="handleTaskInput(event, ' + i + ')">' +
       '<button onclick="addTask(' + i + ')">Agregar</button>' +
       '<ul>' + listTasksHTML + '</ul>' +
       '</div>';
 
     listContainer.innerHTML += listHTML;
+  }
+}
+
+// Función para manejar el evento keydown del input de lista
+function handleListInput(event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Evitar que se realice un salto de línea en el input
+    addList();
+  }
+}
+
+// Función para manejar el evento keydown del input de tarea
+function handleTaskInput(event, index) {
+  if (event.keyCode === 13) {
+    addTask(index);
   }
 }
